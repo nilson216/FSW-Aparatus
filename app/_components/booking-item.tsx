@@ -1,7 +1,6 @@
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { Badge } from "./ui/badge";
 import { Card } from "./ui/card";
-import Image from "next/image";
 
 interface BookingItemProps {
   serviceName: string;
@@ -10,12 +9,17 @@ interface BookingItemProps {
   date: Date;
 }
 
-const BookingItem = ({ serviceName, barbershopName, barbershopImageUrl, date }: BookingItemProps) => {
+const BookingItem = ({
+  serviceName,
+  barbershopName,
+  barbershopImageUrl,
+  date,
+}: BookingItemProps) => {
   return (
     <Card className="flex w-full flex-row items-center justify-between p-0">
       {/* ESQUERDA */}
       <div className="flex flex-1 flex-col gap-4 p-4">
-      <Badge>Confirmado</Badge>
+        <Badge>Confirmado</Badge>
         <div className="flex flex-col gap-2">
           <p className="font-bold">{serviceName}</p>
           <div className="flex items-center gap-2">
@@ -26,19 +30,21 @@ const BookingItem = ({ serviceName, barbershopName, barbershopImageUrl, date }: 
           </div>
         </div>
       </div>
-       {/* DIREITA */}
-       <div className="flex h-full flex-col items-center justify-center p-4 border-l py-3">
+      {/* DIREITA */}
+      <div className="flex h-full flex-col items-center justify-center border-l p-4 py-3">
         <p className="text-xs capitalize">
-            {date.toLocaleDateString("pt-BR", {month: "long"})}
+          {date.toLocaleDateString("pt-BR", { month: "long" })}
         </p>
         <p className="text-xs capitalize">
-        {date.toLocaleDateString("pt-BR", {day: "2-digit"})}
+          {date.toLocaleDateString("pt-BR", { day: "2-digit" })}
         </p>
         <p className="text-xs capitalize">
-        {date.toLocaleTimeString("pt-BR", {hour: "2-digit", minute: "2-digit",})}
+          {date.toLocaleTimeString("pt-BR", {
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
         </p>
-       </div>
-
+      </div>
     </Card>
   );
 };
