@@ -40,9 +40,7 @@ export const createBookingCheckoutSession = actionClient
         _errors: ["Service not found"],
       });
     }
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-      apiVersion: "2025-07-30.basil",
-    });
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
     const checkoutSession = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
