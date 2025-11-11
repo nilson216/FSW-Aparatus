@@ -91,45 +91,59 @@ const SidebarMenu = () => {
 
       {/* Category Buttons */}
       <div className="flex flex-col gap-1">
-        <div className="h-10 w-full cursor-default justify-start rounded-full px-5 py-3">
+        <Link
+          href="/barbershops?search=barba"
+          className="h-10 w-full cursor-default justify-start rounded-full px-5 py-3 hover:bg-transparent"
+        >
           <span className="text-sm font-medium">Barba</span>
-        </div>
-        <div className="h-10 w-full cursor-default justify-start rounded-full px-5 py-3">
+        </Link>
+        <Link
+          href="/barbershops?search=cabelo"
+          className="h-10 w-full cursor-default justify-start rounded-full px-5 py-3 hover:bg-transparent"
+        >
           <span className="text-sm font-medium">Cabelo</span>
-        </div>
-        <div className="h-10 w-full cursor-default justify-start rounded-full px-5 py-3">
+        </Link>
+        <Link
+          href="/barbershops?search=acabamento"
+          className="h-10 w-full cursor-default justify-start rounded-full px-5 py-3 hover:bg-transparent"
+        >
           <span className="text-sm font-medium">Acabamento</span>
-        </div>
-        <div className="h-10 w-full cursor-default justify-start rounded-full px-5 py-3">
+        </Link>
+        <Link
+          href="/barbershops?search=sobrancelha"
+          className="h-10 w-full cursor-default justify-start rounded-full px-5 py-3 hover:bg-transparent"
+        >
           <span className="text-sm font-medium">Sobrancelha</span>
-        </div>
-        <div className="h-10 w-full cursor-default justify-start rounded-full px-5 py-3">
+        </Link>
+        <Link
+          href="/barbershops?search=pézinho"
+          className="h-10 w-full cursor-default justify-start rounded-full px-5 py-3 hover:bg-transparent"
+        >
           <span className="text-sm font-medium">Pézinho</span>
-        </div>
-        <div className="h-10 w-full cursor-default justify-start rounded-full px-5 py-3">
+        </Link>
+        <Link
+          href="/barbershops?search=progressiva"
+          className="h-10 w-full cursor-default justify-start rounded-full px-5 py-3 hover:bg-transparent"
+        >
           <span className="text-sm font-medium">Progressiva</span>
-        </div>
+        </Link>
       </div>
 
-      {session?.user && (
-        <>
-          <Separator />
+      <Separator />
 
-          {/* Logout Button */}
-          <SheetClose asChild>
-            <Button
-              onClick={handleLogout}
-              variant="ghost"
-              className="w-full justify-start gap-3 rounded-full px-5 py-3"
-            >
-              <LogOutIcon className="size-4" />
-              <span className="text-muted-foreground text-sm font-medium">
-                Sair da conta
-              </span>
-            </Button>
-          </SheetClose>
-        </>
-      )}
+      {/* Logout Button */}
+      <SheetClose asChild>
+        <Button
+          onClick={handleLogout}
+          variant="ghost"
+          className="w-full justify-start gap-3 rounded-full px-5 py-3"
+        >
+          <LogOutIcon className="size-4" />
+          <span className="text-muted-foreground text-sm font-medium">
+            Sair da conta
+          </span>
+        </Button>
+      </SheetClose>
     </div>
   );
 };
