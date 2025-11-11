@@ -178,7 +178,7 @@ export function ServiceItem({ service }: ServiceItemProps) {
             <>
               <Separator />
 
-              <div className="flex gap-3 overflow-x-auto px-5 [&::-webkit-scrollbar]:hidden">
+              <div className="scrollbar-hidden flex gap-3 overflow-x-auto px-5">
                 {availableTimeSlots?.data?.map((time) => (
                   <Button
                     key={time}

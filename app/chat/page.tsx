@@ -72,7 +72,7 @@ export default function ChatPage() {
         <div className="flex items-center justify-end gap-[15px]" />
       </div>
 
-      <div className="w-full flex-1 overflow-y-auto pb-24 [&::-webkit-scrollbar]:hidden">
+      <div className="scrollbar-hidden w-full flex-1 overflow-y-auto pb-24">
         {messages.length === 0
           ? INITIAL_MESSAGES.map((msg) => (
               <ChatMessage key={msg.id} message={msg} />
